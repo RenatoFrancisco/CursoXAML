@@ -9,10 +9,16 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button Content="Add Customer"
-                HorizontalAlignment="Left"
+        <Button HorizontalAlignment="Left"
                 VerticalAlignment="Top"
                 Margin="10"
-                Click="ButtonAddCustomer_Click"></Button>
+                Click="ButtonAddCustomer_Click">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Symbol="AddFriend"/>
+                    <TextBlock Text="Add customer" Margin="5 0 0 0"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
     </Grid>
 </Page>
