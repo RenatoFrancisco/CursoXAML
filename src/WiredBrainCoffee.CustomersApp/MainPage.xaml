@@ -6,19 +6,59 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    d:DesignWidth="600"
+    d:DesignHeight="400">
 
     <Grid>
-        <Button HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-                Margin="10"
-                Click="ButtonAddCustomer_Click">
-            <Button.Content>
-                <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Symbol="AddFriend"/>
-                    <TextBlock Text="Add customer" Margin="5 0 0 0"/>
-                </StackPanel>
-            </Button.Content>
-        </Button>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        
+        <!--Header-->
+        <StackPanel Grid.ColumnSpan="2" Background="#F05A28" Orientation="Horizontal">
+            <Image Source="Images/logo.png" Height="90" />
+            <TextBlock Text="Coffee Customer"
+                       FontSize="30"
+                       FontWeight="ExtraBold"
+                       Foreground="White" />
+
+            <TextBlock Text="Version 1.0"
+                       Foreground="#333333" />
+        </StackPanel>
+        
+        <!--Customer list-->
+        <StackPanel Grid.Row="1">
+            <Button HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="10"
+                    Click="ButtonAddCustomer_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="AddFriend"/>
+                        <TextBlock Text="Add customer" Margin="5 0 0 0"/>
+                    </StackPanel>
+                </Button.Content>
+            </Button>
+
+            <ListView>
+                <ListViewItem>Thomas</ListViewItem>
+                <ListViewItem>Julia</ListViewItem>
+                <ListViewItem>Anna</ListViewItem>
+            </ListView>
+        </StackPanel>
+        
+        <!--Customer Details-->
+        <StackPanel Grid.Row="1"
+                    Grid.Column="1">
+            <TextBox Header="FirstName" Margin="10" />
+            <TextBox Header="LastName" Margin="10" />
+            <CheckBox Content="Is Developer" Margin="10" />
+        </StackPanel>
     </Grid>
 </Page>
