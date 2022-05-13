@@ -46,13 +46,16 @@ namespace WiredBrainCoffee.CustomersApp
 
         private async void ButtonAddCustomer_Click(object sender, RoutedEventArgs e)
         {
-            var messageDialog = new MessageDialog("Customer added!");
-            await messageDialog.ShowAsync();
+            var customer = new Customer { FirstName = "New" };
+            customerListView.Items.Add(customer);
+            customerListView.SelectedItem = customer;
         }
 
         private void ButtonDeleteCustomer_Click(object sender, RoutedEventArgs e)
         {
-
+            var customer = customerListView.SelectedItem as Customer;
+            if (customer != null) 
+                customerListView.Items.Remove(customer);
         }
 
         private void ButtonMove_Click(object sender, RoutedEventArgs e)
@@ -69,7 +72,7 @@ namespace WiredBrainCoffee.CustomersApp
             var customer = customerListView.SelectedItem as Customer;
             txtFirstName.Text = customer?.FirstName ?? string.Empty;
             txtLastName.Text = customer?.LastName ?? string.Empty;
-            chkIsDeveloper.IsChecked = customer.IsDeveloper;
+            chkIsDeveloper.IsChecked = customer?.IsDeveloper;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
