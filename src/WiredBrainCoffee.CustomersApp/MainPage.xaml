@@ -84,9 +84,13 @@
         <!--Customer Details-->
         <StackPanel Grid.Row="1"
                     Grid.Column="1">
-            <TextBox Header="First Name" Margin="10" x:Name="txtFirstName"/>
-            <TextBox Header="Last Name" Margin="10" x:Name="txtLastName"/>
-            <CheckBox Content="Is Developer" Margin="10"  x:Name="chkIsDeveloper"/>
+            <TextBox Header="First Name" Margin="10" x:Name="txtFirstName"
+                     TextChanged="TextBox_TextChanged"/>
+            <TextBox Header="Last Name" Margin="10" x:Name="txtLastName"
+                     TextChanged="TextBox_TextChanged"/>
+            <CheckBox Content="Is Developer" Margin="10" x:Name="chkIsDeveloper"
+                      Checked="CheckBox_IsCheckedChanged"
+                      Unchecked="CheckBox_IsCheckedChanged"/>
         </StackPanel>
     </Grid>
 </Page>
