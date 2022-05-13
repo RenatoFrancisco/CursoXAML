@@ -74,19 +74,19 @@
                 </Button>
             </StackPanel>
 
-            <ListView Grid.Row="1">
-                <ListViewItem>Thomas</ListViewItem>
-                <ListViewItem>Julia</ListViewItem>
-                <ListViewItem>Anna</ListViewItem>
+            <ListView Grid.Row="1"
+                      x:Name="customerListView"
+                      DisplayMemberPath="FirstName"
+                      SelectionChanged="Customer_ListView_SelectionChanged">
             </ListView>
         </Grid>
 
         <!--Customer Details-->
         <StackPanel Grid.Row="1"
                     Grid.Column="1">
-            <TextBox Header="First Name" Margin="10" />
-            <TextBox Header="Last Name" Margin="10" />
-            <CheckBox Content="Is Developer" Margin="10" />
+            <TextBox Header="First Name" Margin="10" x:Name="txtFirstName"/>
+            <TextBox Header="Last Name" Margin="10" x:Name="txtLastName"/>
+            <CheckBox Content="Is Developer" Margin="10"  x:Name="chkIsDeveloper"/>
         </StackPanel>
     </Grid>
 </Page>
