@@ -4,7 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:WiredBrainCoffee.CustomersApp"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:controls="using:WiredBrainCoffee.CustomersApp.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     d:DesignWidth="600"
@@ -82,15 +83,7 @@
         </Grid>
 
         <!--Customer Details-->
-        <StackPanel Grid.Row="1"
-                    Grid.Column="1">
-            <TextBox Header="First Name" Margin="10" x:Name="txtFirstName"
-                     TextChanged="TextBox_TextChanged"/>
-            <TextBox Header="Last Name" Margin="10" x:Name="txtLastName"
-                     TextChanged="TextBox_TextChanged"/>
-            <CheckBox Content="Is Developer" Margin="10" x:Name="chkIsDeveloper"
-                      Checked="CheckBox_IsCheckedChanged"
-                      Unchecked="CheckBox_IsCheckedChanged"/>
-        </StackPanel>
+        <controls:CustomerDetailControl Grid.Row="1" Grid.Column="1" 
+                                        x:Name="customerDetailControl" />
     </Grid>
 </Page>
