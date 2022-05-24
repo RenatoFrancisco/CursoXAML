@@ -84,6 +84,7 @@
 
         <!--Customer Details-->
         <controls:CustomerDetailControl Grid.Row="1" Grid.Column="1" 
-                                        x:Name="customerDetailControl" />
+                                        x:Name="customerDetailControl" 
+                                        Customer="Renato,Developer,true"/>
     </Grid>
 </Page>
